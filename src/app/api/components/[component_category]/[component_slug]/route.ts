@@ -11,9 +11,9 @@ export async function GET(
 
   if (component_category in COMPONENTS_DB) {
     if (component_slug in COMPONENTS_DB[component_category]) {
-      return NextResponse.json(
-        COMPONENTS_DB[component_category][component_slug]
-      );
+      const { additional, ...rest } =
+        COMPONENTS_DB[component_category][component_slug];
+      return NextResponse.json(rest);
     }
   }
 
