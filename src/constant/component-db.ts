@@ -1,8 +1,10 @@
+import { authPage } from "./components-content/auth-page";
+
 export interface ComponentManifestJson {
   name: string;
   dependencies: string[];
   registryDependencies: string[];
-  files: { path: string; content: string }[];
+  files: { type: string; path: string; content: string }[];
   type: string;
 }
 
@@ -11,23 +13,19 @@ export const COMPONENTS_DB: {
     [component_slug: string]: ComponentManifestJson;
   };
 } = {
-  test: {
-    "test-1": {
-      name: "test",
-      dependencies: ["button"],
-      registryDependencies: [],
+  pages: {
+    "auth-page-1": {
+      name: "auth-page-1",
+      dependencies: ["button", "input", "tabs", "label"],
+      registryDependencies: ["zod", "react-hook-form"],
       files: [
         {
-          path: `components/unknownbug-ui/test.tsx`,
-          content: `import { Button } from "@/components/ui/button";
-
-                    export default function Test() {
-                      return <Button>Hello Test</Button>;
-                    }
-`,
+          type: "registry:component",
+          path: `components/unknownbug-ui/pages/auth-page.tsx`,
+          content: authPage,
         },
       ],
-      type: "registry:ui",
+      type: "registry:component",
     },
   },
 };
