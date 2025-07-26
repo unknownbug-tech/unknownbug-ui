@@ -38,7 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="h-screen flex flex-col">{children}</div>
+          <div className="h-screen flex flex-col w-screen max-w-screen items-center overflow-x-hidden">
+            {children}
+          </div>
           <Toaster position="top-center" swipeDirections={["top", "bottom"]} />
         </ThemeProvider>
       </body>
