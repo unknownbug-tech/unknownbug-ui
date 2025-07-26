@@ -1,4 +1,4 @@
-export const authPage: string = `"use client";
+"use client";
 import { z } from "zod";
 import React from "react";
 import { Input } from "@/components/ui/input";
@@ -206,5 +206,3 @@ const AuthPage = () => {
 };
 
 export { LoginForm, SignupForm, AuthPage };
-
-`;
