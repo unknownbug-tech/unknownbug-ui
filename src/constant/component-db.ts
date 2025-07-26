@@ -27,7 +27,7 @@ export const COMPONENTS_DB: {
 `,
         },
       ],
-      type: "components:ui",
+      type: "registry:ui",
     },
   },
 };
