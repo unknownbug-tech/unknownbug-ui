@@ -18,7 +18,7 @@ export const COMPONENTS_DB: {
       registryDependencies: [],
       files: [
         {
-          type: "registry:ui",
+          type: "registry:component",
           path: `components/unknownbug-ui/test.tsx`,
           content: `import { Button } from "@/components/ui/button";
 
@@ -28,7 +28,7 @@ export const COMPONENTS_DB: {
 `,
         },
       ],
-      type: "registry:ui",
+      type: "registry:component",
     },
   },
 };
