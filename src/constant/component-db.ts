@@ -4,7 +4,14 @@ export interface ComponentManifestJson {
   name: string;
   dependencies: string[];
   registryDependencies: string[];
-  files: { type: string; path: string; content: string }[];
+  files: {
+    type: string;
+    path: string;
+    content: string;
+  }[];
+  additional: {
+    [key: string]: string;
+  };
   type: string;
 }
 
@@ -17,7 +24,7 @@ export const COMPONENTS_DB: {
     "auth-page-1": {
       name: "auth-page-1",
       dependencies: ["button", "input", "tabs", "label"],
-      registryDependencies: ["zod", "react-hook-form"],
+      registryDependencies: [],
       files: [
         {
           type: "registry:component",
@@ -26,6 +33,10 @@ export const COMPONENTS_DB: {
         },
       ],
       type: "registry:component",
+      additional: {
+        newPackages:"zod;react-hook-form",
+        description:"it's an auth page"
+      },
     },
   },
 };
