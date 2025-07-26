@@ -2,7 +2,7 @@ export interface ComponentManifestJson {
   name: string;
   dependencies: string[];
   registryDependencies: string[];
-  files: { path: string; content: string }[];
+  files: { type: string; path: string; content: string }[];
   type: string;
 }
 
@@ -18,6 +18,7 @@ export const COMPONENTS_DB: {
       registryDependencies: [],
       files: [
         {
+          type: "registry:ui",
           path: `components/unknownbug-ui/test.tsx`,
           content: `import { Button } from "@/components/ui/button";
 
