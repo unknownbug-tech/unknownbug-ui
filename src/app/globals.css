@@ -3,7 +3,6 @@
 
 /* Import plugins using @plugin */
 @plugin "@tailwindcss/typography";
-@plugin "@tailwindcss/forms";
 
 @custom-variant dark (&:is(.dark *));
 

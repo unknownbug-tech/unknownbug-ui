@@ -8,9 +8,10 @@ import {
 import Image from "next/image";
 import { ChevronDownIcon } from "lucide-react";
 import { create } from "zustand";
-import MarkdownRenderer from "@/components/experiment";
+
 import { cn } from "@/lib/utils";
-// import { markdownCode } from "@/constant/markdowncode";
+import { markdownCode } from "@/constant/markdowncode";
+import MarkdownRenderer from "@/components/unknownbug-ui/comp/markdown-renderer";
 
 interface PageStore {
   title: string;
@@ -193,7 +194,9 @@ export const DocumentationPage = ({
             {title || "Loading..."}
           </h3>
           <div className="p-4 h-full overflow-auto">
-            <MarkdownRenderer markdown={pageContent[title] || "Loading..."} />
+            <MarkdownRenderer
+              markdown={pageContent[title] +" \n \n"+ markdownCode || "Loading..."}
+            />
           </div>
         </ResizablePanel>
       </ResizablePanelGroup>

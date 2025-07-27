@@ -1,14 +1,12 @@
 export const markdownRenderer: string = `"use client";
 import React, { JSX, useState } from "react";
-
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-
 import ReactMarkdown, { ExtraProps } from "react-markdown";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { CheckIcon, CopyIcon } from "lucide-react";
 
 interface MarkdownRendererProps {
@@ -35,7 +33,7 @@ const CodeContainer = ({
           variant={"ghost"}
           onClick={() => {
             window.navigator.clipboard.writeText(
-              String(children).replace(/\n$/, "")
+              String(children).replace(/\\n$/, "")
             );
             setIsCopied(true);
             setTimeout(() => {
@@ -58,14 +56,14 @@ const CodeContainer = ({
           borderRadius: "0.75rem", // 12px
         }}
       >
-        {String(children).replace(/\n$/, "")}
+        {String(children).replace(/\\n$/, "")}
       </SyntaxHighlighter>
     </div>
   );
 };
 
 export default function MarkdownRenderer({
-  markdown = "## Hello world \n\`\`\`cpp\ncout>>'Hello World'\n\`\`\`\n",
+  markdown = "## Hello world \\n\`\`\`cpp\\ncout>>'Hello World'\\n\`\`\`\\n",
 }: MarkdownRendererProps) {
   return (
     <div className="prose prose-invert max-w-none w-full">
@@ -76,7 +74,7 @@ export default function MarkdownRenderer({
           code: (props: JSX.IntrinsicElements["code"] & ExtraProps) => {
             const { children, className } = props;
 
-            const match = /language-(\w+)/.exec(className + "  " || "");
+            const match = /language-(\\w+)/.exec(className + "  " || "");
             return match ? (
               <CodeContainer match={match}>{children}</CodeContainer>
             ) : (

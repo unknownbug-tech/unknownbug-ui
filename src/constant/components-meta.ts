@@ -1,5 +1,4 @@
-import { DocumentationPage } from "@/components/comp-1";
-import MarkdownRenderer from "@/components/experiment";
+import MarkdownRenderer from "@/components/unknownbug-ui/comp/markdown-renderer";
 import { AuthPage } from "@/components/unknownbug-ui/pages/auth-page";
 import React from "react";
 
@@ -35,22 +34,22 @@ export const COMPONENTS_METADATA: {
       description: "it's an auth page",
       item: AuthPage,
     },
-    "docs-page-1": {
-      name: "Documentation Page",
-      newPackages:
-        "zustand;remark-gfm;rehype-raw;react-syntax-highlighter;react-markdown",
-      description: `it's an documentation page with proper markdown rendering for your SaaS 
-\nmake sure \nyou have \`@tailwindcss/typography\` plugin  
-installed in your tailwindcss
+    //     "docs-page-1": {
+    //       name: "Documentation Page",
+    //       newPackages:
+    //         "zustand;remark-gfm;rehype-raw;react-syntax-highlighter;react-markdown",
+    //       description: `it's an documentation page with proper markdown rendering for your SaaS
+    // \nmake sure \nyou have \`@tailwindcss/typography\` plugin
+    // installed in your tailwindcss
 
-For \`tailwindcss v4\`
-> Install it in \`global.css\` or \`index.css\`
+    // For \`tailwindcss v4\`
+    // > Install it in \`global.css\` or \`index.css\`
 
-For \`tailwindcss v3\`
-> Install it in \`tailwindcss.config.js.css\` 
-`,
-      item: DocumentationPage,
-    },
+    // For \`tailwindcss v3\`
+    // > Install it in \`tailwindcss.config.js.css\`
+    // `,
+    //       item: DocumentationPage,
+    //     },
   },
   Code: {
     "markdown-renderer-1": {
