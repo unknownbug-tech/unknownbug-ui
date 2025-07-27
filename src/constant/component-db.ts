@@ -28,26 +28,22 @@ export const COMPONENTS_DB: {
         {
           type: "registry:component",
           path: `components/unknownbug-ui/pages/auth-page.tsx`,
-          content: authPage,
+          content: JSON.stringify(authPage),
         },
       ],
       type: "registry:component",
     },
     "docs-page-1": {
       name: "Documentation Page",
-      dependencies: [
-        "resizable",
-        "input",
-        "tabs",
-        "label",
+      dependencies: ["resizable", "input", "tabs", "label"],
+      registryDependencies: [
         "https://ui.unknownbug.tech/api/components/Code/markdown-renderer-1",
       ],
-      registryDependencies: [],
       files: [
         {
           type: "registry:component",
           path: `components/unknownbug-ui/pages/documentation-page.tsx`,
-          content: docsPage,
+          content: JSON.stringify(docsPage),
         },
       ],
       type: "registry:component",
@@ -62,7 +58,7 @@ export const COMPONENTS_DB: {
         {
           type: "registry:component",
           path: `components/unknownbug-ui/comp/markdown-renderer.tsx`,
-          content: markdownRenderer,
+          content: JSON.stringify(markdownRenderer),
         },
       ],
       type: "registry:component",
