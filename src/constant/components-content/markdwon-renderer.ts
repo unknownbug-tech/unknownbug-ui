@@ -35,7 +35,7 @@ const CodeContainer = ({
           variant={"ghost"}
           onClick={() => {
             window.navigator.clipboard.writeText(
-              String(children).replace(/\n$/, "")
+              String(children).replace(/\\n$/, "")
             );
             setIsCopied(true);
             setTimeout(() => {
@@ -58,14 +58,14 @@ const CodeContainer = ({
           borderRadius: "0.75rem", // 12px
         }}
       >
-        {String(children).replace(/\n$/, "")}
+        {String(children).replace(/\\n$/, "")}
       </SyntaxHighlighter>
     </div>
   );
 };
 
 export default function MarkdownRenderer({
-  markdown = "## Hello world \n\`\`\`cpp\ncout>>'Hello World'\n\`\`\`\n",
+  markdown = "## Hello world \\n\`\`\`cpp\\ncout>>'Hello World'\\n\`\`\`\\n",
 }: MarkdownRendererProps) {
   return (
     <div className="prose prose-invert max-w-none w-full">
@@ -76,7 +76,7 @@ export default function MarkdownRenderer({
           code: (props: JSX.IntrinsicElements["code"] & ExtraProps) => {
             const { children, className } = props;
 
-            const match = /language-(\w+)/.exec(className + "  " || "");
+            const match = /language-(\\w+)/.exec(className + "  " || "");
             return match ? (
               <CodeContainer match={match}>{children}</CodeContainer>
             ) : (

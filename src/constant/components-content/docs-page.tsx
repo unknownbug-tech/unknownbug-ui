@@ -194,7 +194,7 @@ export const DocumentationPage = ({
           </h3>
           <div className="p-4 h-full overflow-auto">
             <MarkdownRenderer
-              markdown={pageContent[title] +"\n\n"+ markdownCode || "Loading..."}
+              markdown={pageContent[title] +" \\n \\n"+ markdownCode || "Loading..."}
             />
           </div>
         </ResizablePanel>
