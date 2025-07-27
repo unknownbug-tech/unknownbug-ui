@@ -1,4 +1,6 @@
 import { authPage } from "./components-content/auth-page";
+import { docsPage } from "./components-content/docs-page";
+import { markdownRenderer } from "./components-content/markdwon-renderer";
 
 export interface ComponentManifestJson {
   name: string;
@@ -9,9 +11,6 @@ export interface ComponentManifestJson {
     path: string;
     content: string;
   }[];
-  additional: {
-    [key: string]: string;
-  };
   type: string;
 }
 
@@ -20,7 +19,7 @@ export const COMPONENTS_DB: {
     [component_slug: string]: ComponentManifestJson;
   };
 } = {
-  pages: {
+  Pages: {
     "auth-page-1": {
       name: "auth-page-1",
       dependencies: ["button", "input", "tabs", "label"],
@@ -33,10 +32,40 @@ export const COMPONENTS_DB: {
         },
       ],
       type: "registry:component",
-      additional: {
-        newPackages:"zod;react-hook-form",
-        description:"it's an auth page"
-      },
+    },
+    "docs-page-1": {
+      name: "Documentation Page",
+      dependencies: [
+        "resizable",
+        "input",
+        "tabs",
+        "label",
+        "https://ui.unknownbug.tech/api/components/Code/markdown-renderer-1",
+      ],
+      registryDependencies: [],
+      files: [
+        {
+          type: "registry:component",
+          path: `components/unknownbug-ui/pages/documentation-page.tsx`,
+          content: docsPage,
+        },
+      ],
+      type: "registry:component",
+    },
+  },
+  Code: {
+    "markdown-renderer-1": {
+      name: "Markdown Renderer",
+      dependencies: ["button", "badge"],
+      registryDependencies: [],
+      files: [
+        {
+          type: "registry:component",
+          path: `components/unknownbug-ui/comp/markdown-renderer.tsx`,
+          content: markdownRenderer,
+        },
+      ],
+      type: "registry:component",
     },
   },
 };

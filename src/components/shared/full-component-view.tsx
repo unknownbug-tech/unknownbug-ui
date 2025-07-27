@@ -1,8 +1,7 @@
-import { JSX } from "react";
-import CliGuide from "./cli-guide";
+import React, { JSX } from "react";
 import ComponentInstallationGuide from "./component-installation-guide";
-import { Button } from "../ui/button";
 import Link from "next/link";
+import MarkdownRenderer from "../experiment";
 
 interface Props {
   componentUrl: string;
@@ -10,7 +9,7 @@ interface Props {
     name: string;
     newPackages: string;
     description: string;
-    item: () => JSX.Element;
+    item: React.ComponentType;
   };
 }
 const FullComponentView = ({
@@ -22,7 +21,7 @@ const FullComponentView = ({
   if (!Item) return null;
 
   return (
-    <div className="w-full flex flex-col items-start gap-4 h-[800px]">
+    <div className="w-full flex flex-col items-start gap-4 h-[800px] border-t pt-8">
       <span className="flex items-center justify-between w-full">
         <h2 className="text-xl font-bold uppercase">{name}</h2>
         <span className="items-center flex gap-2">
@@ -39,8 +38,9 @@ const FullComponentView = ({
           />
         </span>
       </span>
-      <p className="text-muted-foreground italic">{description}</p>
-
+      
+        <MarkdownRenderer markdown={description}/>
+        
       <Item />
     </div>
   );
