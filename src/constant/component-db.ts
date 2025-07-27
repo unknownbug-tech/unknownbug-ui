@@ -28,7 +28,7 @@ export const COMPONENTS_DB: {
         {
           type: "registry:component",
           path: `components/unknownbug-ui/pages/auth-page.tsx`,
-          content: JSON.stringify(authPage),
+          content: authPage.replace(/\n/g, "\\n"),
         },
       ],
       type: "registry:component",
@@ -43,7 +43,7 @@ export const COMPONENTS_DB: {
         {
           type: "registry:component",
           path: `components/unknownbug-ui/pages/documentation-page.tsx`,
-          content: JSON.stringify(docsPage),
+          content: docsPage.replace(/\n/g, "\\n"),
         },
       ],
       type: "registry:component",
@@ -58,7 +58,7 @@ export const COMPONENTS_DB: {
         {
           type: "registry:component",
           path: `components/unknownbug-ui/comp/markdown-renderer.tsx`,
-          content: JSON.stringify(markdownRenderer),
+          content: markdownRenderer.replace(/\n/g, "\\n"),
         },
       ],
       type: "registry:component",
