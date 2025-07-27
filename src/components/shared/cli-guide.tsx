@@ -50,7 +50,8 @@ const CliGuide = ({
 
   useEffect(() => {
     setCliCommand(getCliCommand(activeTab, identifier, isNpxType));
-  }, [activeTab]);
+  }, [activeTab, identifier, isNpxType]);
+
   return (
     // Added overflow-hidden to ensure rounded corners clip content
     <span className="bg-black w-full rounded-md mb-4 flex flex-col gap-2 overflow-hidden max-w-[460px] mt-4">

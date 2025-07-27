@@ -21,7 +21,7 @@ const CategoryWiseComponent = async ({
       <h1 className="py-[8vh] text-3xl font-bold uppercase">{category}</h1>
 
       {components && (
-        <div className=" w-full max-w-[1000px] ">
+        <div className=" w-full max-w-[1000px] flex flex-col gap-8  ">
           {Object.entries(components)?.map(([slug, component]) => {
             const componentUrl = `https://ui.unknownbug.tech/api/components/${category}/${slug}`;
             return (
