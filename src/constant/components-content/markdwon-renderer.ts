@@ -1,14 +1,12 @@
 export const markdownRenderer: string = `"use client";
 import React, { JSX, useState } from "react";
-
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-
 import ReactMarkdown, { ExtraProps } from "react-markdown";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { CheckIcon, CopyIcon } from "lucide-react";
 
 interface MarkdownRendererProps {

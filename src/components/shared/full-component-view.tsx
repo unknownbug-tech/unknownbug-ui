@@ -1,7 +1,7 @@
 import React, { JSX } from "react";
 import ComponentInstallationGuide from "./component-installation-guide";
 import Link from "next/link";
-import MarkdownRenderer from "../experiment";
+import MarkdownRenderer from "../unknownbug-ui/comp/markdown-renderer";
 
 interface Props {
   componentUrl: string;
@@ -38,9 +38,9 @@ const FullComponentView = ({
           />
         </span>
       </span>
-      
-        <MarkdownRenderer markdown={description}/>
-        
+
+      <MarkdownRenderer markdown={description} />
+
       <Item />
     </div>
   );

@@ -1,4 +1,5 @@
 export const docsPage: string = `"use client";
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   ResizableHandle,
@@ -8,9 +9,9 @@ import {
 import Image from "next/image";
 import { ChevronDownIcon } from "lucide-react";
 import { create } from "zustand";
-import MarkdownRenderer from "@/components/experiment";
 import { cn } from "@/lib/utils";
 import { markdownCode } from "@/constant/markdowncode";
+import MarkdownRenderer from "@/components/unknownbug-ui/comp/markdown-renderer";
 
 interface PageStore {
   title: string;
